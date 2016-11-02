@@ -11,7 +11,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 /**
- * 设置项布局
+ * Layout for SettingItem
  *
  * @author Lshare
  * @date 2016/11/2
@@ -21,7 +21,7 @@ public class SettingItemView extends RelativeLayout {
     TextView mainTxt;
     TextView secondaryTxt;
     SwitchCompat mySwitch;
-    ImageView nextImg;
+    ImageView rightImg;
     View lineView;
     ImageView leftImg;
 
@@ -45,7 +45,7 @@ public class SettingItemView extends RelativeLayout {
         secondaryTxt = (TextView) findViewById(R.id.secondary_txt);
         mySwitch = (SwitchCompat) findViewById(R.id.my_switch);
         lineView = findViewById(R.id.line_view);
-        nextImg = (ImageView) findViewById(R.id.next_img);
+        rightImg = (ImageView) findViewById(R.id.next_img);
         leftImg = (ImageView) findViewById(R.id.left_img);
         secondaryTxt.setVisibility(GONE);
         leftImg.setVisibility(GONE);
@@ -72,9 +72,18 @@ public class SettingItemView extends RelativeLayout {
         leftImg.setImageResource(leftIconRes);
     }
 
-    public void isShowSwitch(boolean isShowSwitch) {
+    public void isShowRightIcon(boolean isShowRightIcon) {
+        if (isShowRightIcon) {
+            rightImg.setVisibility(VISIBLE);
+        } else {
+            rightImg.setVisibility(INVISIBLE);
+        }
+    }
+
+    public void isShowSwitch(boolean isShowSwitch, boolean defaultValue) {
         if (isShowSwitch) {
             mySwitch.setVisibility(VISIBLE);
+            mySwitch.setChecked(defaultValue);
         } else {
             mySwitch.setVisibility(GONE);
         }

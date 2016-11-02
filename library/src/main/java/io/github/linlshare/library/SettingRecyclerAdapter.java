@@ -16,7 +16,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * 设置项的适配器
+ * Adapter for SettingItem
  *
  * @author Lshare
  * @date 2016/11/1
@@ -26,9 +26,15 @@ public class SettingRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         StickyRecyclerHeadersAdapter<RecyclerView.ViewHolder> {
 
     private List<SettingItemModel> settingList = new ArrayList<>();
-    //插入位置与Header实体的对应
+    // position of Header inserted corresponding to SettingHeaderModel
     private SparseArray<SettingHeaderModel> sparseArray = new SparseArray<>();
 
+    /**
+     * add a Setting Group
+     *
+     * @param header            the only Setting Header
+     * @param settingItemModels multiple Setting Item
+     */
     public void addGroup(SettingHeaderModel header, SettingItemModel... settingItemModels) {
         sparseArray.put(settingList.size(), header);
         settingList.addAll(Arrays.asList(settingItemModels));
@@ -83,14 +89,17 @@ public class SettingRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         if (settingItemModel.getLeftIconRes() != -1) {
             settingItemView.setLeftIconRes(settingItemModel.getLeftIconRes());
         }
+        /*handle right icon*/
+        settingItemView.isShowRightIcon(settingItemModel.isShowRightIcon());
         /*handle line*/
         if (sparseArray.get(position + 1) != null) {
             settingItemView.isShowLine(false);
         } else {
             settingItemView.isShowLine(true);
         }
-
-        settingItemView.isShowSwitch(settingItemModel.isShowSwitch());
+        /*handle switch*/
+        settingItemView.isShowSwitch(settingItemModel.isShowSwitch(), settingItemModel
+                .isSwitchDefaultOn());
         settingItemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,7 +1,7 @@
 package io.github.linlshare.library;
 
 /**
- * 设置头/标题实体
+ * A JavaBean for Setting Header
  *
  * @author Lshare
  * @date 2016/11/2

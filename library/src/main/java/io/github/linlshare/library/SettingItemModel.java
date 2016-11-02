@@ -3,7 +3,7 @@ package io.github.linlshare.library;
 import android.support.annotation.DrawableRes;
 
 /**
- * 设置项实体
+ * A JavaBean for SettingItem
  *
  * @author Lshare
  * @date 2016/11/2
@@ -11,12 +11,13 @@ import android.support.annotation.DrawableRes;
 public class SettingItemModel {
     private
     @DrawableRes
-    int leftIconRes = -1;
+    int leftIconRes = -1; // -1 is the invalid icon res id
     private String mainText;
     private String secondaryText;
-
     private boolean isSecondaryTextHighLight;
     private boolean isShowSwitch;
+    private boolean switchDefaultOn;
+    private boolean isShowRightIcon;
 
     public int getLeftIconRes() {
         return leftIconRes;
@@ -38,17 +39,27 @@ public class SettingItemModel {
         return isShowSwitch;
     }
 
+    public boolean isSwitchDefaultOn() {
+        return switchDefaultOn;
+    }
+
+    public boolean isShowRightIcon() {
+        return isShowRightIcon;
+    }
+
     public SettingItemModel() {
     }
 
     private SettingItemModel(int leftIconRes, String mainText,
                              String secondaryText, boolean isSecondaryTextHighLight, boolean
-                                     isShowSwitch) {
+                                     isShowSwitch, boolean switchDefaultOn, boolean isShowRightIcon) {
         this.leftIconRes = leftIconRes;
         this.mainText = mainText;
         this.secondaryText = secondaryText;
         this.isSecondaryTextHighLight = isSecondaryTextHighLight;
         this.isShowSwitch = isShowSwitch;
+        this.switchDefaultOn = switchDefaultOn;
+        this.isShowRightIcon = isShowRightIcon;
     }
 
     public static class Builder {
@@ -59,10 +70,24 @@ public class SettingItemModel {
         private String secondaryText;
         private boolean isShowSwitch;
         private boolean isSecondaryTextHighLight;
+        private boolean isShowRightIcon;
+        private boolean switchDefaultOn;
 
-        public Builder(String mainText, boolean isShowSwitch) {
+        public Builder(String mainText) {
             this.mainText = mainText;
-            this.isShowSwitch = isShowSwitch;
+            isShowRightIcon = true;
+            isShowSwitch = false;
+        }
+
+        public Builder showSwitch(boolean isOn) {
+            this.isShowSwitch = true;
+            this.switchDefaultOn = isOn;
+            return this;
+        }
+
+        public Builder hideRightIcon() {
+            this.isShowRightIcon = false;
+            return this;
         }
 
         public Builder leftIconRes(@DrawableRes int leftIconRes) {
@@ -78,7 +103,7 @@ public class SettingItemModel {
 
         public SettingItemModel build() {
             return new SettingItemModel(leftIconRes, mainText, secondaryText,
-                    isSecondaryTextHighLight, isShowSwitch);
+                    isSecondaryTextHighLight, isShowSwitch, switchDefaultOn, isShowRightIcon);
         }
     }
 }

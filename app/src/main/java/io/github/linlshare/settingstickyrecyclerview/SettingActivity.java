@@ -44,31 +44,53 @@ public class SettingActivity extends AppCompatActivity implements SettingRecycle
 
         settingRecyclerAdapter.addGroup(
                 new SettingHeaderModel(101, "Normal Setting"),
-                new SettingItemModel.Builder("ID", false).secondaryText("2333333", false).build(),
-                new SettingItemModel.Builder("Name", false).secondaryText("Lshare", false).build(),
-                new SettingItemModel.Builder("Sex", false).secondaryText("Male", false).build(),
-                new SettingItemModel.Builder("City", false).secondaryText("Guangzhou Guangdong",
-                        false).build(),
-                new SettingItemModel.Builder("State", false).secondaryText("Coding", false).build()
+                new SettingItemModel.Builder("ID")
+                        .secondaryText("2333333", false)
+                        .build(),
+                new SettingItemModel.Builder("Name")
+                        .secondaryText("Lshare", false)
+                        .build(),
+                new SettingItemModel.Builder("Sex")
+                        .secondaryText("Male", false)
+                        .build(),
+                new SettingItemModel.Builder("City")
+                        .secondaryText("Guangzhou Guangdong", false)
+                        .build(),
+                new SettingItemModel.Builder("State")
+                        .secondaryText("Coding", false)
+                        .build()
         );
         settingRecyclerAdapter.addGroup(
                 new SettingHeaderModel(102, "Function Setting"),
-                new SettingItemModel.Builder("Gift Exchange", false).build(),
-                new SettingItemModel.Builder("Live Story Setting", false).build()
+                new SettingItemModel.Builder("Gift Exchange")
+                        .secondaryText("New", true)
+                        .build(),
+                new SettingItemModel.Builder("Live Story Setting").build()
         );
         settingRecyclerAdapter.addGroup(
                 new SettingHeaderModel(104, "Share Setting"),
-                new SettingItemModel.Builder("QQ", true).leftIconRes(R.drawable.ic_qzone).build(),
-                new SettingItemModel.Builder("WeChat", true).leftIconRes(R.drawable.ic_wechat)
+                new SettingItemModel.Builder("QQ")
+                        .leftIconRes(R.drawable.ic_qzone)
+                        .showSwitch(true)
+                        .hideRightIcon()
                         .build(),
-                new SettingItemModel.Builder("Sina", true).leftIconRes(R.drawable.ic_sina).build()
+                new SettingItemModel.Builder("WeChat")
+                        .leftIconRes(R.drawable.ic_wechat)
+                        .showSwitch(true)
+                        .hideRightIcon()
+                        .build(),
+                new SettingItemModel.Builder("Sina")
+                        .leftIconRes(R.drawable.ic_sina)
+                        .showSwitch(false)
+                        .hideRightIcon()
+                        .build()
         );
         settingRecyclerAdapter.addGroup(
                 new SettingHeaderModel(105, "Other Setting"),
-                new SettingItemModel.Builder("Feedback", false).build(),
-                new SettingItemModel.Builder("About Us", false).build(),
-                new SettingItemModel.Builder("Check Update", false).build(),
-                new SettingItemModel.Builder("Exit", false).build()
+                new SettingItemModel.Builder("Feedback").build(),
+                new SettingItemModel.Builder("About Us").build(),
+                new SettingItemModel.Builder("Check Update").build(),
+                new SettingItemModel.Builder("Exit").hideRightIcon().build()
         );
         settingRecyclerAdapter.setOnItemClickListener(this);
         recyclerView.setAdapter(settingRecyclerAdapter);
@@ -81,7 +103,7 @@ public class SettingActivity extends AppCompatActivity implements SettingRecycle
 
     @Override
     public void onItemClick(int position, SettingItemModel settingItemModel, boolean isChecked) {
-        Toast.makeText(this, "position:" + position + "isChecked: " + isChecked, Toast
+        Toast.makeText(this, "position:" + position + "\nswitch check state: " + isChecked, Toast
                 .LENGTH_SHORT).show();
     }
 }
