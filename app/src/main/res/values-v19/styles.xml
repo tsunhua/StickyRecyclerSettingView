@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="activity_no_action_bar_transculent" parent="appTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+</resources>

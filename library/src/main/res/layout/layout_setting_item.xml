@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/dp_16"
+                android:paddingRight="@dimen/dp_16">
+
+    <ImageView
+        android:id="@+id/left_img"
+        android:layout_width="@dimen/dp_24"
+        android:layout_height="@dimen/dp_24"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        tools:src="@drawable/ic_next_gray_24dp"/>
+
+    <TextView
+        android:id="@+id/main_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_8"
+        android:layout_toRightOf="@id/left_img"
+        tools:text="绑定手机号码"
+        android:textColor="@color/text_color_80"
+        android:textSize="@dimen/sp_14"/>
+
+    <TextView
+        android:id="@+id/secondary_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp_8"
+        android:layout_toLeftOf="@+id/my_switch"
+        tools:text="送宝石"
+        android:textColor="@color/text_color_40"
+        android:textSize="@dimen/sp_12"/>
+
+    <android.support.v7.widget.SwitchCompat
+        android:id="@+id/my_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/dp_8"
+        android:layout_toLeftOf="@+id/next_img"/>
+
+    <ImageView
+        android:id="@+id/next_img"
+        android:layout_width="@dimen/dp_24"
+        android:layout_height="@dimen/dp_24"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_next_gray_24dp"/>
+
+    <View
+        android:id="@+id/line_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_066"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:background="@color/gray_f2"/>
+</RelativeLayout>
