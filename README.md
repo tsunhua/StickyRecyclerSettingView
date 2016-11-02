@@ -5,11 +5,6 @@ Effect
 
 ![](https://github.com/LinLshare/StickyRecyclerSettingView/blob/master/img/effect.gif?raw=true)
 
-配置
---------
-
-clone the library and copy to your project, modify it to adapt to your business.
-
 Use
 --------
 
