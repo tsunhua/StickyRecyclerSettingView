@@ -8,6 +8,11 @@ Effect
 Use
 --------
 
+At first, clone the project and run the demo;
+Secondly, copy the library to your project and modify it to adapt your business.
+
+Here are the common way to setup setting view:
+
 #### 1. New a SettingRecyclerAdapter 
 
 ```
