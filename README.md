@@ -15,13 +15,13 @@ Here are the common way to setup setting view:
 
 #### 1. New a SettingRecyclerAdapter 
 
-```
+```java
 SettingRecyclerAdapter settingRecyclerAdapter= new SettingRecyclerAdapter();
 ```
 
 #### 2. Build Setting Group
 
-```
+```java
 settingRecyclerAdapter.addGroup(
 		new SettingHeaderModel(101, "Normal Setting"), // setting header
 		new SettingItemModel.Builder("ID") // settingItem 's title
@@ -43,7 +43,7 @@ settingRecyclerAdapter.addGroup(
 
 #### 3. SetItemClickListener
 
-```
+```java
 settingRecyclerAdapter.setOnItemClickListener(new SettingRecyclerAdapter.OnItemClickListener() {
 	@Override
 	public void onItemClick(int position, SettingItemModel settingItemModel, boolean checked) {
@@ -55,7 +55,7 @@ settingRecyclerAdapter.setOnItemClickListener(new SettingRecyclerAdapter.OnItemC
 
 #### 4. RecyclerView Setup
 
-```
+```java
 recyclerView.setAdapter(settingRecyclerAdapter);
 recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
 final StickyRecyclerHeadersDecoration headersDecor = new StickyRecyclerHeadersDecoration(settingRecyclerAdapter);
