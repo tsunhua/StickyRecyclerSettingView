@@ -37,16 +37,19 @@ like this: [settings.xml](https://github.com/LinLshare/StickyRecyclerSettingView
 </settings>
 ```
 
-#### 3. SetItemClickListener?
+#### 3. Parse xml file and add data to adapter
+
+use XmlResourceParser to parse the xml file you defined before(like this: [SettingActivity#loadData](https://github.com/LinLshare/StickyRecyclerSettingView/blob/master/app/src/main/java/io/github/linlshare/settingstickyrecyclerview/SettingActivity.java#L54)), and then call `settingRecyclerAdapter.addAll(settingItemList);` to add them to adapter.
+
+#### 4. SetItemClickListener?
 
 You can do it on [NormalAdapterDelegate](https://github.com/LinLshare/StickyRecyclerSettingView/blob/master/app/src/main/java/io/github/linlshare/settingstickyrecyclerview/adapter/NormalAdapterDelegate.java) for setting OnclickListener of normal item, or on [HeaderAdapterDelegate](https://github.com/LinLshare/StickyRecyclerSettingView/blob/master/app/src/main/java/io/github/linlshare/settingstickyrecyclerview/adapter/HeaderAdapterDelegate.java) for header item.
 
-#### 4. RecyclerView Setup
+#### 5. RecyclerView Setup
 
 ```java
 recyclerView.setLayoutManager(
 	new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-settingRecyclerAdapter = new SettingRecyclerAdapter();
 recyclerView.setAdapter(settingRecyclerAdapter);
 recyclerView.addItemDecoration(new PinnedHeaderItemDecoration());
 ```
