@@ -30,4 +30,5 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:recyclerview-v7:24.2.1'
     compile 'com.timehop.stickyheadersrecyclerview:library:0.4.3@aar'
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }
