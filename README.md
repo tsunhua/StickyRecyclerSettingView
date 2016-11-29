@@ -46,7 +46,7 @@ settingRecyclerAdapter.addGroup(
 ```java
 settingRecyclerAdapter.setOnItemClickListener(new SettingRecyclerAdapter.OnItemClickListener() {
 	@Override
-	public void onItemClick(int position, SettingItemModel settingItemModel, boolean checked) {
+	public void onItemClick(int position, SettingItemModel settingItem, boolean checked) {
 		Toast.makeText(this, "position:" + position + "\nswitch check state: " + isChecked, Toast
 				.LENGTH_SHORT).show();
 	}

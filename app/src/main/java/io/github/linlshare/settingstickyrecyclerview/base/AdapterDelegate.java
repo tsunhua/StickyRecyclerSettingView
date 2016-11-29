@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-package io.github.linlshare.library.base;
+package io.github.linlshare.settingstickyrecyclerview.base;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -39,7 +39,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.RequestCreator;
 import com.squareup.picasso.Transformation;
-import io.github.linlshare.library.R;
+import io.github.linlshare.settingstickyrecyclerview.R;
 import java.util.List;
 
 /**

@@ -1,4 +1,4 @@
-package io.github.linlshare.library.base;
+package io.github.linlshare.settingstickyrecyclerview.base;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -22,15 +22,13 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.RequestCreator;
 import com.squareup.picasso.Transformation;
-import io.github.linlshare.library.R;
+import io.github.linlshare.settingstickyrecyclerview.R;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @author Lshare
  * @date 2016/11/9
- * <p>
- * Copyright (c) 2016. WUDE All rights reserved.
  */
 public abstract class BaseRecyclerAdapter<T>
     extends RecyclerView.Adapter<BaseRecyclerAdapter.ViewHolder> {

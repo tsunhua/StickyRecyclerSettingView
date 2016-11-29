@@ -25,6 +25,7 @@ dependencies {
     exclude group: 'com.android.support', module: 'support-annotations'
   })
   testCompile 'junit:junit:4.12'
-  compile 'com.timehop.stickyheadersrecyclerview:library:0.4.3@aar'
-  compile project(path: ':library')
+  compile 'com.android.support:appcompat-v7:24.2.1'
+  compile 'com.android.support:recyclerview-v7:24.2.1'
+  compile 'com.squareup.picasso:picasso:2.5.2'
 }

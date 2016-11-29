@@ -14,7 +14,7 @@
  *  limitations under the License.
  */
 
-package io.github.linlshare.library.base;
+package io.github.linlshare.settingstickyrecyclerview.base;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;

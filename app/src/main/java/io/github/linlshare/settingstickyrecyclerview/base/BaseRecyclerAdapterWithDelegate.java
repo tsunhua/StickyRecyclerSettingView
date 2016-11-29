@@ -1,4 +1,4 @@
-package io.github.linlshare.library.base;
+package io.github.linlshare.settingstickyrecyclerview.base;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
@@ -8,21 +8,17 @@ import java.util.List;
 /**
  * @author Lshare
  * @date 2016/11/9
- * <p>
- * Copyright (c) 2016. WUDE All rights reserved.
  */
 public abstract class BaseRecyclerAdapterWithDelegate<T> extends RecyclerView.Adapter {
 
   private List<T> dataList;
-  AdapterDelegatesManager<List<T>> adapterDelegatesManager;
+  public AdapterDelegatesManager<List<T>> adapterDelegatesManager;
 
   public BaseRecyclerAdapterWithDelegate() {
     dataList = new ArrayList<>();
     adapterDelegatesManager = new AdapterDelegatesManager<>();
     //addDelegateHere();
   }
-
-  public abstract void addDelegateHere();
 
   public void addDelegate(AdapterDelegate delegate) {
     adapterDelegatesManager.addDelegate(delegate);
