@@ -21,9 +21,9 @@ SettingRecyclerAdapter settingRecyclerAdapter= new SettingRecyclerAdapter();
 
 #### 2. Define Settings.xml
 
-like this:![settings.xml](https://github.com/LinLshare/StickyRecyclerSettingView/blob/master/app/src/main/res/xml/settings.xml)
+like this: [settings.xml](https://github.com/LinLshare/StickyRecyclerSettingView/blob/master/app/src/main/res/xml/settings.xml)
 
-```java
+```xml
 <settings>
   <!--Normal Setting-->
   <header name="Normal Setting"/>
@@ -39,7 +39,7 @@ like this:![settings.xml](https://github.com/LinLshare/StickyRecyclerSettingView
 
 #### 3. SetItemClickListener?
 
-You can do it on ![NormalAdapterDelegate](https://github.com/LinLshare/StickyRecyclerSettingView/blob/master/app/src/main/java/io/github/linlshare/settingstickyrecyclerview/adapter/NormalAdapterDelegate.java) for setting OnclickListener of normal item, or on ![HeaderAdapterDelegate](https://github.com/LinLshare/StickyRecyclerSettingView/blob/master/app/src/main/java/io/github/linlshare/settingstickyrecyclerview/adapter/HeaderAdapterDelegate.java) for header item.
+You can do it on [NormalAdapterDelegate](https://github.com/LinLshare/StickyRecyclerSettingView/blob/master/app/src/main/java/io/github/linlshare/settingstickyrecyclerview/adapter/NormalAdapterDelegate.java) for setting OnclickListener of normal item, or on [HeaderAdapterDelegate](https://github.com/LinLshare/StickyRecyclerSettingView/blob/master/app/src/main/java/io/github/linlshare/settingstickyrecyclerview/adapter/HeaderAdapterDelegate.java) for header item.
 
 #### 4. RecyclerView Setup
 
