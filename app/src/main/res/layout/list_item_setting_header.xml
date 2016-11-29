@@ -11,5 +11,5 @@
     android:paddingTop="@dimen/dp_8"
     android:textColor="@color/text_color_40"
     android:textSize="@dimen/sp_14"
-    tools:text="标题"
+    tools:text="Title"
     />

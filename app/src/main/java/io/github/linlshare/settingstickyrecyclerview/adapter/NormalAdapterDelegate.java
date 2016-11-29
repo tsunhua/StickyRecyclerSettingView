@@ -11,6 +11,10 @@ import java.util.List;
  * @date 2016/11/29
  */
 public class NormalAdapterDelegate extends AdapterDelegate<List<SettingItem>> {
+  private int highLightColor = 0xffda595c;
+  private int secondaryTextColor = 0x66000000;
+  //private int mainTextColor = 0xcc000000;
+
   @Override public boolean isForViewType(@NonNull List<SettingItem> items, int position) {
     return !items.get(position).isHeader();
   }
@@ -23,7 +27,31 @@ public class NormalAdapterDelegate extends AdapterDelegate<List<SettingItem>> {
     final SettingItem settingItem = items.get(position);
     holder.setText(R.id.main_txt, settingItem.getMainText());
     if (settingItem.getSecondaryText() != null) {
+      holder.setVisible(R.id.secondary_txt, true);
       holder.setText(R.id.secondary_txt, settingItem.getSecondaryText());
+    } else {
+      holder.setVisible(R.id.secondary_txt, false);
+    }
+    if (settingItem.getLeftIconRes() != -1) {
+      holder.setVisible(R.id.left_img, true);
+      holder.setImageResource(R.id.left_img, settingItem.getLeftIconRes());
+    } else {
+      holder.setVisible(R.id.left_img, false);
+    }
+    if (settingItem.isSecondaryTextHighLight()) {
+      holder.setTextColor(R.id.secondary_txt, highLightColor);
+    } else {
+      holder.setTextColor(R.id.secondary_txt, secondaryTextColor);
+    }
+    if (settingItem.isShowRightIcon()) {
+      holder.setVisible(R.id.next_img, true);
+    } else {
+      holder.setVisible(R.id.next_img, false);
+    }
+    if (settingItem.isShowSwitch()) {
+      holder.setVisible(R.id.my_switch, true);
+    } else {
+      holder.setVisible(R.id.my_switch, false);
     }
   }
 }

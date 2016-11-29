@@ -5,41 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:orientation="vertical">
-    <!--头部-->
-    <RelativeLayout
+    android:orientation="vertical"
+    >
+  <!--Header-->
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/dp_48"
+      android:background="@color/white"
+      >
+
+    <ImageView
+        android:id="@+id/back_img"
+        android:layout_width="@dimen/dp_44"
+        android:layout_height="@dimen/dp_44"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/dp_8"
+        android:src="@drawable/ic_arrow_back_black_24dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="Setting Center"
+        android:textColor="@color/text_color_60"
+        android:textSize="@dimen/sp_16"
+        />
+
+    <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_48"
-        android:background="@color/white">
+        android:layout_height="@dimen/dp_066"
+        android:layout_alignParentBottom="true"
+        android:background="@color/gray_d9"
+        />
+  </RelativeLayout>
 
-        <ImageView
-            android:id="@+id/back_img"
-            android:layout_width="@dimen/dp_44"
-            android:layout_height="@dimen/dp_44"
-            android:layout_centerVertical="true"
-            android:padding="@dimen/dp_8"
-            android:src="@drawable/ic_arrow_back_black_24dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="设置中心"
-            android:textColor="@color/text_color_60"
-            android:textSize="@dimen/sp_16"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_066"
-            android:layout_alignParentBottom="true"
-            android:background="@color/gray_d9"/>
-    </RelativeLayout>
-
-    <!--设置项目-->
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+  <!--SettingItemList-->
+  <android.support.v7.widget.RecyclerView
+      android:id="@+id/recycler_view"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      />
 
 </LinearLayout>

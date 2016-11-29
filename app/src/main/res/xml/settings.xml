@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <!--Normal Setting-->
+  <header name="Normal Setting"/>
+  <item
+      name="ID"
+      secondaryTxt="23333"/>
+  <item
+      name="Name"
+      secondaryTxt="Lshare"/>
+  <item
+      name="Sex"
+      secondaryTxt="male"/>
+  <item
+      name="City"
+      secondaryTxt="Guangzhou"/>
+  <item
+      name="State"
+      secondaryTxt="Coding"/>
+  <!--Function Setting-->
+  <header name="Function Setting"/>
+  <item
+      hightLight="true"
+      name="Gift Exchange"
+      secondaryTxt="New"/>
+  <item name="Live Story Setting"/>
+  <!--Share Setting-->
+  <header name="Share Setting"/>
+  <item
+      leftIconRes="R.drawable.ic_qzone"
+      name="QQ"
+      showRightIcon="false"
+      showSwitch="off"
+      />
+  <item
+      leftIconRes="R.drawable.ic_wechat"
+      name="WeChat"
+      showRightIcon="false"
+      showSwitch="on"
+      />
+  <item
+      leftIconRes="R.drawable.ic_sina"
+      name="Sina"
+      showRightIcon="false"
+      showSwitch="on"
+      />
+  <!--Other Setting-->
+  <header name="Other Setting"/>
+  <item name="Feedback"/>
+  <item name="About Us"/>
+  <item name="Check Update"/>
+  <item name="Exit"/>
+  <!--Other Setting-->
+  <header name="Other Setting"/>
+  <item name="Feedback"/>
+  <item name="About Us"/>
+  <item name="Check Update"/>
+  <item name="Exit"/>
+  <!--Other Setting-->
+  <header name="Other Setting"/>
+  <item name="Feedback"/>
+  <item name="About Us"/>
+  <item name="Check Update"/>
+  <item name="Exit"/>
+  <!--Other Setting-->
+  <header name="Other Setting"/>
+  <item name="Feedback"/>
+  <item name="About Us"/>
+  <item name="Check Update"/>
+  <item name="Exit"/>
+</settings>
