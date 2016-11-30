@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<settings>
+<settings xmlns:android="http://schemas.android.com/apk/res/android">
   <!--Normal Setting-->
-  <header name="Normal Setting"/>
+  <header
+      name="Normal Setting"/>
   <item
+      android:id="@+id/id"
       name="ID"
       secondaryTxt="23333"/>
   <item
+      android:id="@+id/name"
       name="Name"
       secondaryTxt="Lshare"/>
   <item
+      android:id="@+id/sex"
       name="Sex"
       secondaryTxt="male"/>
   <item
+      android:id="@+id/city"
       name="City"
       secondaryTxt="Guangzhou"/>
   <item
+      android:id="@+id/state"
       name="State"
       secondaryTxt="Coding"/>
   <!--Function Setting-->
   <header name="Function Setting"/>
   <item
+      android:id="@+id/gift_exchange"
       hightLight="true"
       name="Gift Exchange"
       secondaryTxt="New"/>
@@ -27,18 +34,21 @@
   <!--Share Setting-->
   <header name="Share Setting"/>
   <item
+      android:id="@+id/qq"
       leftIconRes="R.drawable.ic_qzone"
       name="QQ"
       showRightIcon="false"
       showSwitch="off"
       />
   <item
+      android:id="@+id/we_chat"
       leftIconRes="R.drawable.ic_wechat"
       name="WeChat"
       showRightIcon="false"
       showSwitch="on"
       />
   <item
+      android:id="@+id/sina"
       leftIconRes="R.drawable.ic_sina"
       name="Sina"
       showRightIcon="false"
@@ -46,26 +56,30 @@
       />
   <!--Other Setting-->
   <header name="Other Setting"/>
-  <item name="Feedback"/>
-  <item name="About Us"/>
-  <item name="Check Update"/>
-  <item name="Exit"/>
+  <item
+      android:id="@+id/feedback"
+      name="Feedback"/>
+  <item
+      android:id="@+id/aboutus"
+      name="About Us"/>
+  <item
+      android:id="@+id/update"
+      name="Check Update"/>
+  <item
+      android:id="@+id/exit"
+      name="Exit"/>
   <!--Other Setting-->
   <header name="Other Setting"/>
-  <item name="Feedback"/>
-  <item name="About Us"/>
-  <item name="Check Update"/>
-  <item name="Exit"/>
-  <!--Other Setting-->
-  <header name="Other Setting"/>
-  <item name="Feedback"/>
-  <item name="About Us"/>
-  <item name="Check Update"/>
-  <item name="Exit"/>
-  <!--Other Setting-->
-  <header name="Other Setting"/>
-  <item name="Feedback"/>
-  <item name="About Us"/>
-  <item name="Check Update"/>
-  <item name="Exit"/>
+  <item
+      android:id="@+id/feedback2"
+      name="Feedback"/>
+  <item
+      android:id="@+id/aboutus2"
+      name="About Us"/>
+  <item
+      android:id="@+id/update2"
+      name="Check Update"/>
+  <item
+      android:id="@+id/exit2"
+      name="Exit"/>
 </settings>

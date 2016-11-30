@@ -11,8 +11,8 @@ import java.util.List;
  */
 public abstract class BaseRecyclerAdapterWithDelegate<T> extends RecyclerView.Adapter {
 
-  private List<T> dataList;
   public AdapterDelegatesManager<List<T>> adapterDelegatesManager;
+  private List<T> dataList;
 
   public BaseRecyclerAdapterWithDelegate() {
     dataList = new ArrayList<>();
@@ -22,6 +22,10 @@ public abstract class BaseRecyclerAdapterWithDelegate<T> extends RecyclerView.Ad
 
   public void addDelegate(AdapterDelegate delegate) {
     adapterDelegatesManager.addDelegate(delegate);
+  }
+
+  public T get(int position) {
+    return dataList.get(position);
   }
 
   public void addAll(List<T> dataList) {

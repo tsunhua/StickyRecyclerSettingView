@@ -10,6 +10,7 @@ import android.support.annotation.DrawableRes;
  */
 public class SettingItem {
 
+  private int id;
   private @DrawableRes int leftIconRes = -1; // -1 is the invalid icon res id
   private String mainText;
   private String secondaryText;
@@ -18,13 +19,12 @@ public class SettingItem {
   private boolean switchDefaultOn;
   private boolean isShowRightIcon;
   private boolean isHeader;
-
   public SettingItem() {
   }
-
-  private SettingItem(int leftIconRes, String mainText, String secondaryText,
+  private SettingItem(int id, int leftIconRes, String mainText, String secondaryText,
       boolean isSecondaryTextHighLight, boolean isShowSwitch, boolean switchDefaultOn,
       boolean isShowRightIcon, boolean isHeader) {
+    this.id = id;
     this.leftIconRes = leftIconRes;
     this.mainText = mainText;
     this.secondaryText = secondaryText;
@@ -39,20 +39,40 @@ public class SettingItem {
     return leftIconRes;
   }
 
+  public void setLeftIconRes(int leftIconRes) {
+    this.leftIconRes = leftIconRes;
+  }
+
   public String getMainText() {
     return mainText;
+  }
+
+  public void setMainText(String mainText) {
+    this.mainText = mainText;
   }
 
   public String getSecondaryText() {
     return secondaryText;
   }
 
+  public void setSecondaryText(String secondaryText) {
+    this.secondaryText = secondaryText;
+  }
+
   public boolean isSecondaryTextHighLight() {
     return isSecondaryTextHighLight;
   }
 
+  public void setSecondaryTextHighLight(boolean secondaryTextHighLight) {
+    isSecondaryTextHighLight = secondaryTextHighLight;
+  }
+
   public boolean isShowSwitch() {
     return isShowSwitch;
+  }
+
+  public void setShowSwitch(boolean showSwitch) {
+    isShowSwitch = showSwitch;
   }
 
   public boolean isSwitchDefaultOn() {
@@ -63,6 +83,10 @@ public class SettingItem {
     return isShowRightIcon;
   }
 
+  public void setShowRightIcon(boolean showRightIcon) {
+    isShowRightIcon = showRightIcon;
+  }
+
   public boolean isHeader() {
     return isHeader;
   }
@@ -71,7 +95,16 @@ public class SettingItem {
     isHeader = header;
   }
 
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
   public static class Builder {
+    private int id;
     private @DrawableRes int leftIconRes = -1;
     private String mainText;
     private String secondaryText;
@@ -81,11 +114,12 @@ public class SettingItem {
     private boolean switchDefaultOn;
     private boolean isHeader;
 
-    public Builder(String mainText) {
-      this(mainText, false);
+    public Builder(int id, String mainText) {
+      this(id, mainText, false);
     }
 
-    public Builder(String mainText, boolean isHeader) {
+    public Builder(int id, String mainText, boolean isHeader) {
+      this.id = id;
       this.mainText = mainText;
       this.isHeader = isHeader;
       isShowRightIcon = !isHeader;
@@ -115,7 +149,7 @@ public class SettingItem {
     }
 
     public SettingItem build() {
-      return new SettingItem(leftIconRes, mainText, secondaryText, isSecondaryTextHighLight,
+      return new SettingItem(id, leftIconRes, mainText, secondaryText, isSecondaryTextHighLight,
           isShowSwitch, switchDefaultOn, isShowRightIcon, isHeader);
     }
   }

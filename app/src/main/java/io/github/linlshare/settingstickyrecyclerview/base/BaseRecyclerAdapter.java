@@ -39,6 +39,10 @@ public abstract class BaseRecyclerAdapter<T>
     dataList = new ArrayList<>();
   }
 
+  public T get(int position) {
+    return dataList.get(position);
+  }
+
   public void addAll(List<T> dataList) {
     this.dataList.addAll(dataList);
     notifyDataSetChanged();

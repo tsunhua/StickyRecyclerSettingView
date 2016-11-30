@@ -1,6 +1,7 @@
 package io.github.linlshare.settingstickyrecyclerview.adapter;
 
 import android.support.annotation.NonNull;
+import android.view.View;
 import io.github.linlshare.settingstickyrecyclerview.R;
 import io.github.linlshare.settingstickyrecyclerview.base.AdapterDelegate;
 import io.github.linlshare.settingstickyrecyclerview.model.SettingItem;
@@ -14,6 +15,7 @@ public class NormalAdapterDelegate extends AdapterDelegate<List<SettingItem>> {
   private int highLightColor = 0xffda595c;
   private int secondaryTextColor = 0x66000000;
   //private int mainTextColor = 0xcc000000;
+  private OnNormalItemClickListener onNormalItemClickListener;
 
   @Override public boolean isForViewType(@NonNull List<SettingItem> items, int position) {
     return !items.get(position).isHeader();
@@ -53,5 +55,22 @@ public class NormalAdapterDelegate extends AdapterDelegate<List<SettingItem>> {
     } else {
       holder.setVisible(R.id.my_switch, false);
     }
+
+    // click event
+    holder.itemView.setOnClickListener(new View.OnClickListener() {
+      @Override public void onClick(View v) {
+        if (onNormalItemClickListener != null) {
+          onNormalItemClickListener.onItemClick(settingItem.getId(), settingItem);
+        }
+      }
+    });
+  }
+
+  public void setOnNormalItemClickListener(OnNormalItemClickListener listener) {
+    this.onNormalItemClickListener = listener;
+  }
+
+  public interface OnNormalItemClickListener {
+    void onItemClick(int id, SettingItem item);
   }
 }
