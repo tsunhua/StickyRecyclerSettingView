@@ -24,13 +24,15 @@ SettingRecyclerAdapter settingRecyclerAdapter= new SettingRecyclerAdapter();
 like this: [settings.xml](https://github.com/LinLshare/StickyRecyclerSettingView/blob/master/app/src/main/res/xml/settings.xml)
 
 ```xml
-<settings>
-  <!--Normal Setting-->
-  <header name="Normal Setting"/>
+<settings xmlns:android="http://schemas.android.com/apk/res/android">
+  <header
+        name="Normal Setting"/>
   <item
+      android:id="@+id/id"
       name="ID"
       secondaryTxt="23333"/>
   <item
+      android:id="@+id/name"
       name="Name"
       secondaryTxt="Lshare"/>
    ...
@@ -41,10 +43,18 @@ like this: [settings.xml](https://github.com/LinLshare/StickyRecyclerSettingView
 
 use XmlResourceParser to parse the xml file you defined before(like this: [SettingActivity#loadData](https://github.com/LinLshare/StickyRecyclerSettingView/blob/master/app/src/main/java/io/github/linlshare/settingstickyrecyclerview/SettingActivity.java#L54)), and then call `settingRecyclerAdapter.addAll(settingItemList);` to add them to adapter.
 
-#### 4. SetItemClickListener?
+#### 4. SetItemClickListener
 
-You can do it on [NormalAdapterDelegate](https://github.com/LinLshare/StickyRecyclerSettingView/blob/master/app/src/main/java/io/github/linlshare/settingstickyrecyclerview/adapter/NormalAdapterDelegate.java) for setting OnclickListener of normal item, or on [HeaderAdapterDelegate](https://github.com/LinLshare/StickyRecyclerSettingView/blob/master/app/src/main/java/io/github/linlshare/settingstickyrecyclerview/adapter/HeaderAdapterDelegate.java) for header item.
+Just call `settingRecyclerAdapter.setOnItemClickListener(this);` and then handle the event like follow:
 
+```java
+@Override public void onItemClick(int id, SettingItem item) {
+  Util.toast(this, item);
+  if (id == R.id.name) {
+    settingRecyclerAdapter.updateSecondaryText(id, "Here it go");
+  }
+}
+```
 #### 5. RecyclerView Setup
 
 ```java
