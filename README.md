@@ -9,7 +9,7 @@ Use
 --------
 
 At first, clone the project and run the demo;
-Secondly, copy the library to your project and modify it to adapt your business.
+Secondly, copy the code to your project and modify it to adapt your business.
 
 Here are the common way to setup setting view:
 
@@ -19,53 +19,46 @@ Here are the common way to setup setting view:
 SettingRecyclerAdapter settingRecyclerAdapter= new SettingRecyclerAdapter();
 ```
 
-#### 2. Build Setting Group
+#### 2. Define Settings.xml
 
-```java
-settingRecyclerAdapter.addGroup(
-		new SettingHeaderModel(101, "Normal Setting"), // setting header
-		new SettingItemModel.Builder("ID") // settingItem 's title
-				.secondaryText("2333333", false) // settingItem 's right text
-				.build(),
-		new SettingItemModel.Builder("Name")
-				.secondaryText("Lshare", false)
-				.build()
-);
-settingRecyclerAdapter.addGroup(
-		new SettingHeaderModel(104, "Share Setting"),
-		new SettingItemModel.Builder("QQ")
-				.leftIconRes(R.drawable.ic_qzone) // settingItem 's left icon
-				.showSwitch(true) // settingItem if show switch
-				.hideRightIcon() // settingItem if hide right arrow icon
-				.build()
-);
+like this: [settings.xml](https://github.com/LinLshare/StickyRecyclerSettingView/blob/master/app/src/main/res/xml/settings.xml)
+
+```xml
+<settings>
+  <!--Normal Setting-->
+  <header name="Normal Setting"/>
+  <item
+      name="ID"
+      secondaryTxt="23333"/>
+  <item
+      name="Name"
+      secondaryTxt="Lshare"/>
+   ...
+</settings>
 ```
 
-#### 3. SetItemClickListener
+#### 3. Parse xml file and add data to adapter
+
+use XmlResourceParser to parse the xml file you defined before(like this: [SettingActivity#loadData](https://github.com/LinLshare/StickyRecyclerSettingView/blob/master/app/src/main/java/io/github/linlshare/settingstickyrecyclerview/SettingActivity.java#L54)), and then call `settingRecyclerAdapter.addAll(settingItemList);` to add them to adapter.
+
+#### 4. SetItemClickListener?
+
+You can do it on [NormalAdapterDelegate](https://github.com/LinLshare/StickyRecyclerSettingView/blob/master/app/src/main/java/io/github/linlshare/settingstickyrecyclerview/adapter/NormalAdapterDelegate.java) for setting OnclickListener of normal item, or on [HeaderAdapterDelegate](https://github.com/LinLshare/StickyRecyclerSettingView/blob/master/app/src/main/java/io/github/linlshare/settingstickyrecyclerview/adapter/HeaderAdapterDelegate.java) for header item.
+
+#### 5. RecyclerView Setup
 
 ```java
-settingRecyclerAdapter.setOnItemClickListener(new SettingRecyclerAdapter.OnItemClickListener() {
-	@Override
-	public void onItemClick(int position, SettingItemModel settingItem, boolean checked) {
-		Toast.makeText(this, "position:" + position + "\nswitch check state: " + isChecked, Toast
-				.LENGTH_SHORT).show();
-	}
-});
-```
-
-#### 4. RecyclerView Setup
-
-```java
+recyclerView.setLayoutManager(
+	new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 recyclerView.setAdapter(settingRecyclerAdapter);
-recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false));
-final StickyRecyclerHeadersDecoration headersDecor = new StickyRecyclerHeadersDecoration(settingRecyclerAdapter);
-recyclerView.addItemDecoration(headersDecor); //let header sticky
+recyclerView.addItemDecoration(new PinnedHeaderItemDecoration());
 ```
 
 Thanks To
 --------
 
-[timehop/sticky-headers-recyclerview](https://github.com/timehop/sticky-headers-recyclerview)
+- AdapterDelegates: https://github.com/sockeqwe/AdapterDelegates
+- pinned-section-item-decoration: https://github.com/takahr/pinned-section-item-decoration
  
 License
 --------
